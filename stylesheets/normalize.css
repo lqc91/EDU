@@ -1,54 +1,58 @@
-html,body,h1,h2,h3,h4,h5,h6,p,ul,li{margin:0;padding:0;}
-div{overflow:hidden;}
-input{box-sizing:border-box;}
-ul,li{list-style:none;}
-a{text-decoration:none}
-em{font-style:normal;}
-img{border:0;}
+html,body,h1,h2,h3,h4,h5,h6,p,ul,li,input,video{
+	margin:0;padding:0;
+}
 body{
 	font-family:'Microsoft YaHei','sans-serif';
+}
+div{
+	overflow:hidden;
+}
+ul,li{
+	list-style:none;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:normal;
+	line-height:1;
+	color:#333;
 }
 h1{
 	font-size:22px;
 	font-family:'Hiragino Sans GB','Microsoft YaHei','sans-serif';
-	line-height:42px;
-	color:#39a030;
-}
-h1 strong{
-	font-size:28px;
-	font-weight:bold;
-	font-family:'Gill Sans MT','Microsoft YaHei','sans-serif';
-}
-h1 span{
-	font-size:18px;
 }
 h2{
 	font-size:20px;
-	line-height:42px;
 }
 h3{
-	font-size:16px;
-	line-height:36px;
+	font-size:18px;
+	color:#444;
 }
 h4{
-	font-size:14px;
-	line-height:2.2;
-	color:#333;
+	font-size:16px;
 }
 h5{
-	font-size:12px;
-	line-height:2.4;
+	font-size:14px;
 }
 p{
 	font-size:14px;
 	line-height:24px;
 	color:#666;
 }
-span,em{
-	font:12px '宋体';
+strong{
+	font-size:28px;
+	font-family:'Gill Sans MT','Microsoft YaHei','sans-serif';
+}
+em,i{
+	font-style:normal;
+}
+input{
+	box-sizing:border-box;
 }
 a{
 	color:#666;
+	cursor:pointer;
+}
+a,a:hover{
+	text-decoration:none;
 }
 a:hover{
 	color:#39a030;
