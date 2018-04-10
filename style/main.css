@@ -47,7 +47,7 @@
 	width:9px;
 	height:9px;
 	margin-right:6px;
-	background:url('../images/ui_sprite.png') -265px -35px no-repeat;
+	background:url('../image/ui_sprite.png') -265px -35px no-repeat;
 }
 /* NOTIFY */
 
@@ -88,10 +88,10 @@ h1 span{
 	padding-left:22px;
 	margin:0 14px 0 31px;
 	cursor:pointer;
-	background:url('../images/ui_sprite.png') 0 0 no-repeat;
+	background:url('../image/ui_sprite.png') 0 0 no-repeat;
 }
 #follow:hover{
-	background:url('../images/ui_sprite.png') 0 -35px no-repeat;	
+	background:url('../image/ui_sprite.png') 0 -35px no-repeat;	
 }
 #unfollow{
 	float:right;
@@ -119,7 +119,7 @@ h1 span{
 	float:right;
 	width:20px;
 	height:20px;
-	background:url('../images/ui_sprite.png') -190px 0 no-repeat;
+	background:url('../image/ui_sprite.png') -190px 0 no-repeat;
 }
 #h_search a:hover{
 	background-position:-190px -35px;
@@ -192,7 +192,7 @@ h1 span{
 	height:80px;
 	margin-right:20px;
 	margin-top:17px;
-	background:url('../images/ui_sprite.png');
+	background:url('../image/ui_sprite.png');
 }
 #products #open163{
 	background-position:0 -80px;
@@ -342,7 +342,7 @@ h1 span{
 	width:20px;
 	height:16px;
 	margin:0 0 -3px 10px;
-	background:url('../images/ui_sprite.png') -225px 0 no-repeat;
+	background:url('../image/ui_sprite.png') -225px 0 no-repeat;
 }
 /* FOOTER */
 
@@ -374,7 +374,7 @@ h1 span{
 	cursor:pointer;
 	width:23px;
 	height:22px;
-	background:url('../images/ui_sprite.png') -225px -35px no-repeat; 
+	background:url('../image/ui_sprite.png') -225px -35px no-repeat; 
 }
 /*LOGIN MODAL*/
 #login_modal{
@@ -406,7 +406,7 @@ h1 span{
 #login_modal #login{
 	height:48px;
 	margin-top:29px;
-	background:url('../images/ui_sprite.png') 0 -180px no-repeat;
+	background:url('../image/ui_sprite.png') 0 -180px no-repeat;
 	box-shadow:none;
 }
 /*LOGIN MODAL*/
