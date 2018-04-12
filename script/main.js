@@ -88,62 +88,63 @@ addEvent(closeVideo,'click',function(){
 // 点击右上角，关闭视频弹窗
 
 // slide
-var picture = document.getElementById('picture');
-var imgs = picture.getElementsByTagName('img');
-var pointer = document.getElementById('pointer');
-var lis = pointer.getElementsByTagName('li');
-window.onload = function(){
-	// 点击小圆点切换banner
-	for (var i = 0; i < lis.length; i++) {
-		lis[i].index=i;
-		addEvent(lis[i],'click',function(){
-			for (var j = 0; j < lis.length; j++) {
-				lis[j].style.backgroundColor='#fff';
-				imgs[j].style.display='none';
-			}
-			this.style.backgroundColor='#333';
-			imgs[this.index].style.display='block';
-		});
-	}
-	// 点击小圆点切换banner
-	
-	addEvent(lis[i],'mouseover',clearInterval(p));
-	addEvent(lis[i],'mouseout',setInterval(p));
-}
-	
-// autoPlay event
-function play() {
-	for (var i = 0; i < lis.length; i++) {
-		for (var j = 0; j < lis.length; j++) {
-			lis[j].style.backgroundColor='#fff';
-			imgs[j].style.display='none';
-		}
-		lis[i].style.backgroundColor='#333';
-		imgs[i].style.display='block';
-		fadeIn(imgs[i]);
-	}
-}
-var p = setInterval(play,5000);
-// AutoPlay event
-	
-// 淡入效果
-function fadeIn (ele) {
-  var stepLength = 1/50;
-  if (parseFloat(ele.style.opacity)) {
-    ele.style.opacity = 0;
-  }
-  function step () {
-    if (parseFloat(ele.style.opacity)+stepLength < 1) {
-      ele.style.opacity = parseFloat(ele.style.opacity)+stepLength;
-    } else {
-      ele.style.opacity = 0;
-      clearInterval(f);
+(function(){
+  var bannerWrap = document.getElementById('banner');
+  var banner = {
+    pic: bannerWrap.getElementsByClassName('pic'),
+    picNum: bannerWrap.getElementsByClassName('pic').length,
+    dot: bannerWrap.getElementsByClassName('dot'),
+    idx: 0,
+    play: null,
+    delay: null
+  };
+
+  var slide = {
+    change: function(){
+      for(var i = 0; i < banner.picNum; i++){
+        banner.dot[i].style.backgroundColor = '#fff';
+        banner.pic[i].style.display = 'none';
+      }
+      banner.dot[banner.idx].style.backgroundColor = '#333';
+      banner.pic[banner.idx].style.opacity = '0';
+      banner.pic[banner.idx].style.display = 'inline-block';
+      slide.fade(banner.pic[banner.idx], 500);
+      banner.idx++;
+      banner.idx === banner.picNum ? banner.idx = 0 : banner.idx;
+    },
+    start: function(){
+      play = setInterval(slide.change, 5000);
+    },
+    pause: function(){
+      clearInterval(play);
+    },
+    fade: function(ele, time){
+      var alpha = parseFloat(ele.style.opacity),
+        range = 1 - alpha,
+        speed = range/time*10, // /10ms
+        addAlpha;
+        addAlpha = setInterval(function(){
+          ele.style.opacity = parseFloat(ele.style.opacity) + speed;
+          if(parseFloat(ele.style.opacity) >= 1){
+            clearInterval(addAlpha);
+            ele.style.opacity = 1;
+          }
+        }, 50);
     }
+  };
+
+  for(var i = 0; i < banner.picNum; i++){
+    banner.dot[i].id = 'dot' + i;
+    banner.dot[i].onclick = function(){
+      banner.idx = this.id.slice(3);
+      slide.change();
+    };
   }
-  var f = setInterval(step, 10);
-}
-// 淡入效果
-	
+
+  bannerWrap.onmouseout = slide.start;
+  bannerWrap.onmouseover = slide.pause;
+  bannerWrap.onmouseout();
+})();
 // slide
 
 // 浏览器事件兼容

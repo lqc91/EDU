@@ -141,30 +141,45 @@ h1 span{
 /*MAIN CONTENT*/
 
 /* slide */
-#slide{
-	position:relative;
-	height:460px;
+.banner{
+  position:relative;
+  height:460px;
+  overflow:hidden;
 }
-#picture{
-	height:460px;
-	margin-left:-826px;
+.banner .pic{
+  display:block;
+  width:100%;
+  height:100%;
+  background-repeat:no-repeat;
+  background-position:center;
 }
-#pointer ul{
-	margin-left:-26px;
-	bottom:20px;
+.banner .pic1{
+  background-image:url('../image/banner1.jpg');
 }
-#pointer ul li{
-	width:10px;
-	height:10px;
-	border-radius:50%;
-	float:left;
-	margin-left:11px;
-	background-color:#fff;
-	cursor:pointer;
+.banner .pic2{
+  background-image:url('../image/banner2.jpg');
 }
-#pointer ul li:first-child{
-	margin-left:0;
-	background-color:#333;
+.banner .pic3{
+  background-image:url('../image/banner3.jpg');
+}
+.banner .dots{
+  position:absolute;
+  left:50%;
+  bottom:20px;
+  height:10px;
+  margin-left:-45px;
+}
+.banner .dots .dot{
+  float:left;
+  width:10px;
+  height:10px;
+  margin-left:11px;
+  border-radius:50%;
+  background-color:#fff;
+  cursor:pointer;
+}
+.banner .dots .dot:first-child{
+  background-color:#333;
 }
 /* slide */
 
