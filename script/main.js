@@ -42,21 +42,21 @@ addEvent(password,'click',function(){
 })
 // 点击账号、密码输入框，提示文字消失，并改变文字颜色
 
-var xhr = null;
-if (window.XMLHttpRequest) {
-	xhr = new XMLHttpRequest();
-} else {
-	xhr = new ActiveXObject("Microsoft.XMLHTTP");
-}
-xhr.onreadystatechange = function(){
-	if (this.readyState == 4) {
-		if (this.status == 200){
-			this.responseText;
-		} else {
-			console.log('Request was unsuccessful:' + this.status);
-		}
-	}
-}
+// var xhr = null;
+// if (window.XMLHttpRequest) {
+// 	xhr = new XMLHttpRequest();
+// } else {
+// 	xhr = new ActiveXObject("Microsoft.XMLHTTP");
+// }
+// xhr.onreadystatechange = function(){
+// 	if (this.readyState == 4) {
+// 		if (this.status == 200){
+// 			this.responseText;
+// 		} else {
+// 			console.log('Request was unsuccessful:' + this.status);
+// 		}
+// 	}
+// }
 
 var login = document.getElementById('login');
 addEvent(login,'click',function(){
@@ -146,6 +146,15 @@ addEvent(closeVideo,'click',function(){
   bannerWrap.onmouseout();
 })();
 // slide
+
+// 左侧内容区tab切换
+function switchTab (tab, target, cls) {
+  const curTab = getUtil.byCls(cls, tab);
+  classUtil.remove(curTab, cls);
+  classUtil.add(target, cls);
+}
+const tab = getUtil.byCls('tab')[0];
+addEvent(tab, 'click', () => { switchTab(tab, event.target, 'selected') });
 
 // 浏览器事件兼容
 function addEvent(element,type,listener){

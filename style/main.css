@@ -126,7 +126,7 @@ h1 span{
 }
 #nav{
 	display:inline-block;
-	float:right;
+	/* float:right; */
 	margin-top:36px;
 }
 #nav a{
@@ -254,10 +254,32 @@ h1 span{
 	margin-right:3px;
 }
 /* TAB */
-#tab{
+.tab{
+	width: 400px;
+	height: 50px;
+	background-color: #ffffff;
+	/* box-shadow: 0px 1px 1px 0px rgba(6, 0, 1, 0.2); */
+	box-shadow: 1px 2px 2px lightgrey;
+}
+.tab .category{
+	float:left;
+	width: 200px;
+	height: 50px;
+	color: #666;
+	font-size: 20px;
+	line-height: 50px;
+	text-align: center;
+	font-family: 'Microsoft YaHei', sans-serif;
+	cursor: pointer;
+}
+.tab .selected {
+	color: #fff;
+	background-color: #39a030;
+}
+/* #tab{
 	height:50px;
 	margin-bottom:30px;
-}
+} */
 #tab .cat{
 	width:200px;
 	line-height:50px;
