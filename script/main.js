@@ -156,6 +156,22 @@ function switchTab (tab, target, cls) {
 const tab = getUtil.byCls('tab')[0];
 addEvent(tab, 'click', () => { switchTab(tab, event.target, 'selected') });
 
+// ajax
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange = () => {
+  if (xhr.readyState === 4) {
+    console.log(typeof xhr.readyState);
+    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+      console.log(xhr.responseText);
+    } else {
+      console.log(xhr.status === 0);
+    }
+  }
+};
+xhr.open('get', 'http://study.163.com/webDev/cousesByCategory.htm', false);
+// xhr.setRequestHeader()
+xhr.send();
+
 // 浏览器事件兼容
 function addEvent(element,type,listener){
 	if(element.addEventListener){
